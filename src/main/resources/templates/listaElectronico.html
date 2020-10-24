@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<body>
+
+    <div class="container">
+        <a th:href="@{/electronico/formulario}" class="btn btn-success">Crear</a>
+    	<table class="table">
+    	   <thead>
+    	   		<tr>
+    	   			<th>Id</th>
+    	   			<th>Nombre</th>
+    	   			<th>Operaciones</th>
+    	   		</tr>
+    	   </thead>
+    	   <tbody>
+    	       <tr th:each="elec:${lista}">
+    	       		<td th:text="${elec.id}"></td>
+    	       		<td th:text="${elec.nombre}"></td>
+    	       		<td>
+    	       			<a th:href="@{/electronico/editar/{id} (id=${elec.id})}" class="btn btn-warning">Editar</a>
+    	       			<a th:href="@{/electronico/eliminar/{id} (id=${elec.id})}" class="btn btn-danger">Eliminar</a>
+    	       		
+    	       		</td>
+    	       </tr>	    	   
+    	   </tbody>
+    	</table>
+    </div>
+<script th:href="@{/js/jquery-3.4.0.min.js}"></script>
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>

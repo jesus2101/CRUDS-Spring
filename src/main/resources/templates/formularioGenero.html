@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<form th:action="@{/genero/insertar}" method="post" th:object="${genero}">
+		<input type="hidden" th:field="*{id}">
+		<div class="form-group">
+		<input type=text class="form-control" id="nombreGnero" th:field="*{nombre}" placeholder="Nombre del genero">
+		<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="alert alert-danger" role="alert"></div>
+		</div>
+		<button type="submit" class="btn btn-success btn-block">Enviar</button>
+				
+		</form>	
+	
+	</div>
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>

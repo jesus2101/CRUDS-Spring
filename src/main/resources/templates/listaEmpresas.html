@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+
+ <a th:href="@{/empresa/formEmpresa}" class="btn btn-primary">Crear</a>
+<div class="container">
+	<table class="table">
+	  <thead>
+	    <tr>
+	        <th>Id</th>
+	        <th>Nombre</th>
+	        <th>Operaciones<th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr th:each="empresa:${listaEmpresas}">
+	        <td th:text="${empresa.id}"></td>
+	        <td th:text="${empresa.nombre}"></td>
+	        <td>
+	        <a th:href="@{/empresa/editar/{id} (id=${empresa.id})}" class="btn btn-warning">Editar</a>
+	        <a th:href="@{/empresa/eliminar/{id} (id=${empresa.id})}" class="btn btn-danger">Eliminar</a>
+	        
+	        <td>
+	    <tr>
+	  </tbody>
+	
+	</table>
+</div>
+
+
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>

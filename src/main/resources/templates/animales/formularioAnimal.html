@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+<form th:action="@{/animales/registrar}" method="post" th:object="${animal}">
+   <input type="hidden" th:field="*{id}">
+   <div class="form-group">
+   <input type="text" class="form-control" id="nombre" th:field="*{nombre}" placeholder="Nombre animal">
+   <div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+   </div>
+   <button type="submit" class="btn btn-success btn-block">Registrar</button>
+   
+</form>
+
+</div>
+
+
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+</head>
+<body>
+
+<a class="btn btn-primary" th:href="@{/equipo/formulario}">Crear Equipo</a>
+<table class="table">
+<thead>
+	<tr>
+		<th>Id</th>
+		<th>Nombre</th>
+		<th>Pais</th>
+		<th>Operaciones</th>	
+	</tr>
+</thead>
+<tbody>
+	<tr th:each="equipo:${listaEquipos}">
+		<td th:text="${equipo.id}"></td>
+		<td th:text="${equipo.nombre}"></td>
+		<td th:text="${equipo.pais}"></td>
+		<td>
+			<a class="btn btn-warning" th:href="@{/equipo/actualizarEquipo/{id} (id=${equipo.id})}">Actualizar</a>
+			<a class="btn btn-danger" th:href="@{/equipo/eliminarEquipo/{id} (id=${equipo.id})}">Eliminar</a>
+		</td>
+	</tr>
+</tbody>
+
+
+</table>
+
+</body>
+</html>

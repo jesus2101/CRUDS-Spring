@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+<body>
+
+	|<div class="container">
+		<form th:action="@{/electronico/insertar}" method="post" th:object="${electronico}">
+			<input type="hidden" th:field="*{id}">
+			
+			<div class="form-group">
+			<input type="text" class="form-control" id="nombre" name="nombre" th:field="*{nombre}" placeholder="Nombre del electronico">
+			<div th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="alert alert-danger" role="alert"></div>
+			</div>
+			
+			<button type="submit" class="btn btn-success btn-block">Enviar</button>		
+		</form>
+	</div>
+
+
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>

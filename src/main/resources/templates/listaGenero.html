@@ -1,0 +1,34 @@
+<!DOCTYPE html>	
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+     <a th:href="@{/genero/formGenero}" class="btn btn-success">Crear</a>
+	<table class="table">
+		<thead>
+	    	 <tr>
+       			 <th>Id</th>
+        	   	 <th>Nombre</th>
+        	   	 <th>Operaciones</th>
+     		</tr>     
+		</thead>
+		<tbody>
+  			<tr th:each="l:${lista}">
+  				<td th:text="${l.id}"></td>
+ 				<td th:text="${l.nombre}"></td>
+ 				<td>
+ 				   <a th:href="@{/genero/eliminar/{id} (id=${l.id})}" class="btn btn-danger">Eliminar</a>
+ 				   <a th:href="@{/genero/editar/{id} (id=${l.id})}" class="btn btn-warning">Editar</a>
+ 				</td>
+  			</tr>
+		</tbody>
+	</table>
+</div>	
+	
+<script th:href="@{/js/bootstrap.js}"></script>
+</body>
+</html>
